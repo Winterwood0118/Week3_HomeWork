@@ -1,8 +1,10 @@
 package com.example.week3_homework
 
+import kotlin.math.round
+
 class Order(_name: String, _price: Double, _count: Int) {
-    private val name = _name
-    private val price = _price
-    private val countOfOrder = _count
-    private val totalPrice = price * countOfOrder
+    val name = _name
+    val price = _price
+    val countOfOrder = _count
+    val totalPrice = round(price * countOfOrder * 10)/10
 }
