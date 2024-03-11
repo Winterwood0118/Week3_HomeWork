@@ -1,16 +1,5 @@
 package com.example.week3_homework
 
-
-/* 기본 기능
-1. 메뉴 카테고리(대분류)
-2. 메뉴 선택(메뉴 리스트)
-3. 선택한 메뉴 주문 리스트에 추가
-4. 결제 확인창(추가로 주문하기, 주문 취소하기, 결제하기) << 되긴했음
- */
-/* 추가할 기능
-1. 번호 골라서 주문 취소하기
-2. 시간 관련
- */
 fun main() {
     val ordered = mutableListOf<Order>()// 주문한 메뉴의 정보가 있는 Order 클래스
     val category = MainCategory()
