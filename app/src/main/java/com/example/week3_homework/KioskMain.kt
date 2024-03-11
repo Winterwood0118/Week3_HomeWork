@@ -5,7 +5,7 @@ package com.example.week3_homework
 1. 메뉴 카테고리(대분류)
 2. 메뉴 선택(메뉴 리스트)
 3. 선택한 메뉴 주문 리스트에 추가
-4. 결제 확인창(추가로 주문하기, 주문 취소하기, 결제하기) << 안됐음
+4. 결제 확인창(추가로 주문하기, 주문 취소하기, 결제하기) << 되긴했음
  */
 /* 추가할 기능
 1. 번호 골라서 주문 취소하기
@@ -54,8 +54,8 @@ fun main() {
                             val input2 = readln()
                             when (input2) {
                                 "1" -> {
-                                    money =
-                                        billList.purchaseFun(money, ordered.sumOf { it.totalPrice })
+                                    money = billList.purchaseFun(money, ordered.sumOf { it.totalPrice })
+                                    ordered.clear()
                                     continue@order
                                 }
 
@@ -103,7 +103,7 @@ fun main() {
                 println("올바른 번호를 입력하세요")
                 continue
             }
-        }
+        } // 물건 선택 후 저장
         val nextOrder = menuType.nextOrder()
         if (nextOrder) continue
 
@@ -114,6 +114,7 @@ fun main() {
             when (input) {
                 "1" -> {
                     money = billList.purchaseFun(money, ordered.sumOf { it.totalPrice })
+                    ordered.clear()
                     continue@order
                 }
 

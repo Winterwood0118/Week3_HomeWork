@@ -2,7 +2,7 @@ package com.example.week3_homework
 
 class SideMenu : MenuType() {
     override val menu = arrayOf(
-        Triple("French Fries  ", 5.0, "바삭바삭 맛있는 감자튀김"),
+        Triple("French Fries  ", 3.0, "바삭바삭 맛있는 감자튀김"),
         Triple("Buffalo Wing  ", 5.0, "날개만 좋아하는 당신에게"),
         Triple("Buffalo Stick ", 5.0, "봉만 좋아하는 당신에게"),
         //Triple("",10.0,"")
