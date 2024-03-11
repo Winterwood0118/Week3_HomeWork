@@ -6,5 +6,5 @@ class Order(_name: String, _price: Double, _count: Int) {
     val name = _name
     val price = _price
     val countOfOrder = _count
-    val totalPrice = round(price * countOfOrder * 10)/10
+    val totalPrice = round(price * countOfOrder * 10) / 10
 }
