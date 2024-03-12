@@ -4,7 +4,7 @@ class PizzaMenu : MenuType() {
     override val menu = arrayOf(
         Triple("Pepperoni Pizza", 12.0, "근본의 피자"),
         Triple("Cheese Pizza  ", 12.3, "6가지 치즈가 들어가 풍부한 맛"),
-        Triple("Bulgogi Pizza", 15.0, "단짠 석쇠 불고기가 들어간 피자"),
+        Triple("Bulgogi Pizza ", 15.0, "단짠 석쇠 불고기가 들어간 피자"),
         Triple("Hawaiian Pizza", 29.9, "왜 안파냐는 문의가 너무 많아 만든 인기 절정의 피자")
     )
 
