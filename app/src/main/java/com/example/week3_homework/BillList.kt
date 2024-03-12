@@ -1,9 +1,11 @@
 package com.example.week3_homework
 
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.math.round
 
 class BillList(_ordered: MutableList<Order>) {
-    val ordered = _ordered
+    private val ordered = _ordered
     fun printBill() {
         if (ordered.isEmpty()) {
             println("주문 목록이 비어있습니다.")
@@ -18,7 +20,7 @@ class BillList(_ordered: MutableList<Order>) {
 
     fun getNumFun(): Int {
         println("\n사용하실 기능을 선택해주세요.")
-        println("1.\t결제하기\t2.\t초기화하기\t3.\t처음으로 돌아가기")
+        println("1.\t결제하기\t2.\t초기화하기\t3.\t추가주문하기")
         while (true) {
             val input = readln().toIntOrNull() ?: -1
             when (input) {
@@ -32,14 +34,17 @@ class BillList(_ordered: MutableList<Order>) {
 
     fun purchaseFun(_money: Double, total: Double): Double {
         var money = _money
+        val formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss")
+        val localDate = LocalDateTime.now().format(formatter)
 
         if (money >= total) {
             val changes = round((money - total) * 10) / 10
-            println("총 $ ${money} 중 $ ${total}을 지불해 $ ${changes} 남았습니다.")
+            println("총 \$ ${money} 중 \$ ${total}을 지불해 \$ ${changes} 남았습니다.")
+            println("결제가 완료되었습니다. \t(${localDate})")
             money -= total
         } else {
             val changes = round((-money + total) * 10) / 10
-            println("금액이 $ ${changes}만큼 모자랍니다.")
+            println("금액이 \$ ${changes}만큼 모자랍니다. 주문목록을 초기화합니다.")
         }
 
         return money

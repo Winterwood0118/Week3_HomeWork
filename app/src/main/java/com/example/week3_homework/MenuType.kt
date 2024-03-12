@@ -54,7 +54,7 @@ open class MenuType {
     fun nextOrder(): Boolean {
         while (true) {
             println("추가 구매를 진행하시겠습니까?")
-            println("1. 추가로 구매하기\t 2. 계산하기")
+            println("1. 예\t 2. 아니오")
             val input = readln()
             return when (input) {
                 "1" -> true
