@@ -3,6 +3,26 @@ package com.example.week3_homework
 open class MenuType {
     open val menu: Array<Triple<String, Double, String>> = arrayOf()
     open fun printMenu() {}
+
+    fun getMenu(): Int {
+        val menuNum: Int
+        while (true) {
+            val input = readln().toIntOrNull() ?: -1
+            when (input) {
+                in 0..menu.size -> {
+                    menuNum = input
+                    break
+                }
+
+                else -> {
+                    println("올바른 숫자를 입력해 주세요.")
+                    continue
+                }
+            }
+        }
+        return menuNum
+    }
+
     fun takeNum(_num: Int): Order { //메뉴 이름, 가격, 개수, 총합
         val num = _num
         val menu = menu
