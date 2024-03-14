@@ -1,7 +1,5 @@
 package com.example.week3_homework
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import kotlin.math.round
 
 class BillList(_ordered: MutableList<Order>) {
@@ -34,17 +32,13 @@ class BillList(_ordered: MutableList<Order>) {
 
     fun purchaseFun(_money: Double, total: Double): Double {
         var money = _money
-        val formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss")
-        val localDate = LocalDateTime.now().format(formatter)
-
+        val changes = round((money - total) * 10) / 10
         if (money >= total) {
-            val changes = round((money - total) * 10) / 10
             println("총 \$ ${money} 중 \$ ${total}을 지불해 \$ ${changes} 남았습니다.")
-            println("결제가 완료되었습니다. \t(${localDate})")
-            money -= total
+            println("결제가 완료되었습니다. \t(${localDateTime.format(formatter)})")
+            money = changes
         } else {
-            val changes = round((-money + total) * 10) / 10
-            println("금액이 \$ ${changes}만큼 모자랍니다. 주문목록을 초기화합니다.")
+            println("금액이 \$ ${-changes}만큼 모자랍니다. 주문목록을 초기화합니다.")
         }
 
         return money
