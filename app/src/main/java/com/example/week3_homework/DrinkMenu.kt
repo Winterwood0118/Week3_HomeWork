@@ -13,7 +13,7 @@ class DrinkMenu : MenuType() {
         println("아래 메뉴판에서 구매를 희망하는 번호를 입력하세요.\n")
         println("\n[ Drink ]\n")
         for (i in menu.indices) {
-            println("${i + 1}. ${menu[i].first}| $ ${menu[i].second} | ${menu[i].third}")
+            println("${i + 1}. ${menu[i].first}| \$ ${menu[i].second} | ${menu[i].third}")
         }
         println("0. 뒤로가기\t\t\t| 뒤로가기")
     }
