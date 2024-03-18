@@ -2,15 +2,15 @@ package com.example.week3_homework
 
 import kotlin.math.round
 
-class BillList(_ordered: MutableList<Order>) {
-    private val ordered = _ordered
+class BillList(inputOrdered: MutableList<Order>) {
+    private val ordered = inputOrdered
     fun printBill() {
         if (ordered.isEmpty()) {
             println("주문 목록이 비어있습니다.")
         } else {
             println("순번\t|  품목 명\t\t\t|  가격\t\t| 개수\t| 총가격")
             for (i in 0..ordered.lastIndex) {
-                println("${i + 1}\t| ${ordered[i].name}\t|  $ ${ordered[i].price}\t| ${ordered[i].countOfOrder}  \t| $ ${ordered[i].totalPrice}")
+                println("${i + 1}\t| ${ordered[i].name}\t|  $ ${ordered[i].price}\t| ${ordered[i].count}  \t| $ ${ordered[i].totalPrice}")
             }
             println("총 금액\t\t\t\t\t\t\t\t\t\t| $ ${ordered.sumOf { it.totalPrice }}")
         }
@@ -30,8 +30,8 @@ class BillList(_ordered: MutableList<Order>) {
         }
     }
 
-    fun purchaseFun(_money: Double, total: Double): Double {
-        var money = _money
+    fun purchaseFun(inputMoney: Double, total: Double): Double {
+        var money = inputMoney
         val changes = round((money - total) * 10) / 10
         if (money >= total) {
             println("총 \$ ${money} 중 \$ ${total}을 지불해 \$ ${changes} 남았습니다.")

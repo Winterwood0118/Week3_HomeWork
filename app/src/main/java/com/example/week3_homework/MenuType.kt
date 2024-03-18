@@ -1,7 +1,7 @@
 package com.example.week3_homework
 
 open class MenuType {
-    open val menu: Array<Triple<String, Double, String>> = arrayOf()
+    open val menu: Array<Menu> = arrayOf()
     open fun printMenu() {}
 
     fun getMenu(): Int {
@@ -23,8 +23,7 @@ open class MenuType {
         return menuNum
     }
 
-    fun takeNum(_num: Int): Order { //메뉴 이름, 가격, 개수, 총합
-        val num = _num
+    fun takeNum(inputNum: Int): Order { //메뉴 이름, 가격, 개수, 총합
         val menu = menu
         val count: Int
         while (true) {
@@ -47,7 +46,7 @@ open class MenuType {
                 }
             }
         }
-        val order = Order(menu[num - 1].first, menu[num - 1].second, count)
+        val order = Order(menu[inputNum - 1].name, menu[inputNum - 1].price, count)
         return order
     }
 

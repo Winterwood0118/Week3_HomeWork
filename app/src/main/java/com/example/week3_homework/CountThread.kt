@@ -1,6 +1,6 @@
 package com.example.week3_homework
 
-class CountThread(): Thread() {
+class CountThread: Thread() {
     var kioskFinished = false
     override fun run() {
         var i = 0

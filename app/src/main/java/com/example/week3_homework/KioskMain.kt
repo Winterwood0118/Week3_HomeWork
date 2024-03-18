@@ -7,8 +7,8 @@ fun main() {
     val category = MainCategory()
     val billList = BillList(ordered)
 
-    println("가진 돈을 입력하세요. 오류 발생 시 $ 100.0이 자동으로 입력됩니다.(소숫점 한자리까지)")
-    var money = readln().toDoubleOrNull() ?: 100.0
+    println("가진 돈을 입력하세요.(소숫점 한자리까지)")
+    var money = getMoney()
     println("Welcome to Just Pizzeria")
 
     // 돈 입력후 5초마다 자동으로 출력하는 thread
@@ -79,3 +79,18 @@ fun main() {
     countThread.kioskFinished = true
 }
 
+fun getMoney(): Double{
+    val money: Double
+    while (true) {
+        val inputMoney = readln().toDoubleOrNull()?:-1.0
+        if (inputMoney >= 0.0) {
+            money = inputMoney
+            break
+        }
+        else {
+            println("정상적인 금액을 입력하세요.")
+            continue
+        }
+    }
+    return money
+}
